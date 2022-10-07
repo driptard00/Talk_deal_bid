@@ -40,6 +40,11 @@ const String shippingAddressScreen = "/shippingAddressScreen";
 * Profile Screens.
 */
 const String profileScreen = "/profileScreen";
+const String editProfileScreen = "/editProfileScreen";
+const String walletScreen = "/walletScreen";
+const String fundWalletScreen = "/fundWalletScreen";
+const String activitesScreen = "/activitiesScreen";
+const String settingsScreen = "/settingsScreen";
 
 /*
 * Others Screens.

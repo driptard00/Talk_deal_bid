@@ -26,11 +26,11 @@ class AuctionScreen extends StatelessWidget {
         height: Get.height,
         width: Get.width,
         padding: EdgeInsets.symmetric(horizontal: 15),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 750,
+        child: Column(
+          children: [
+            Expanded(
+              flex: 18,
+              child: Container(
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -55,6 +55,7 @@ class AuctionScreen extends StatelessWidget {
                                 TextFormField(
                                   decoration: InputDecoration(
                                     border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)
                                    ),
                                 ),
                               ],
@@ -68,6 +69,7 @@ class AuctionScreen extends StatelessWidget {
                               ),
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
+                                contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)
                               ),
                               items: [], 
                               onChanged: (value){
@@ -100,59 +102,71 @@ class AuctionScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 // ========= image 1 =========
-                                Container(
-                                  height: 76,
-                                  width: 90,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xffFF5C2A)),
-                                    color: Color(0xffFFE8E1)
-                                  ),
-                                  child: Icon(
-                                    Iconsax.add,
-                                    size: 30,
-                                    color: Color(0xffFF5C2A),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    height: 76,
+                                    width: 90,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xffFF5C2A)),
+                                      color: Color(0xffFFE8E1)
+                                    ),
+                                    child: Icon(
+                                      Iconsax.add,
+                                      size: 30,
+                                      color: Color(0xffFF5C2A),
+                                    ),
                                   ),
                                 ),      
                                // ========= image 2 =========
-                                Container(
-                                  height: 76,
-                                  width: 90,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xffFF5C2A)),
-                                    color: Color(0xffFFE8E1)
-                                  ),
-                                  child: Icon(
-                                    Iconsax.add,
-                                    size: 30,
-                                    color: Color(0xffFF5C2A),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    height: 76,
+                                    width: 90,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xffFF5C2A)),
+                                      color: Color(0xffFFE8E1)
+                                    ),
+                                    child: Icon(
+                                      Iconsax.add,
+                                      size: 30,
+                                      color: Color(0xffFF5C2A),
+                                    ),
                                   ),
                                 ),             
                                 // ========= image 3 =========
-                                Container(
-                                  height: 76,
-                                  width: 90,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xffFF5C2A)),
-                                    color: Color(0xffFFE8E1)
-                                  ),
-                                  child: Icon(
-                                    Iconsax.add,
-                                    size: 30,
-                                    color: Color(0xffFF5C2A),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    height: 76,
+                                    width: 90,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xffFF5C2A)),
+                                      color: Color(0xffFFE8E1)
+                                    ),
+                                    child: Icon(
+                                      Iconsax.add,
+                                      size: 30,
+                                      color: Color(0xffFF5C2A),
+                                    ),
                                   ),
                                 ),     
                                 // ========= image 4 =========
-                                Container(
-                                  height: 76,
-                                  width: 90,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Color(0xffFF5C2A)),
-                                    color: Color(0xffFFE8E1)
-                                  ),
-                                  child: Icon(
-                                    Iconsax.add,
-                                    size: 30,
-                                    color: Color(0xffFF5C2A),
+                                Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    height: 76,
+                                    width: 90,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Color(0xffFF5C2A)),
+                                      color: Color(0xffFFE8E1)
+                                    ),
+                                    child: Icon(
+                                      Iconsax.add,
+                                      size: 30,
+                                      color: Color(0xffFF5C2A),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -200,10 +214,11 @@ class AuctionScreen extends StatelessWidget {
                           const SizedBox(height: 10,),
                           TextFormField(
                             keyboardType: TextInputType.multiline,
-                            minLines: 2,
+                            minLines: 5,
                             maxLines: 5,
                             decoration: InputDecoration(
-                              border: OutlineInputBorder()
+                              border: OutlineInputBorder(),
+                              contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)
                             ),
                           ) ,
                           ],
@@ -212,45 +227,55 @@ class AuctionScreen extends StatelessWidget {
                       const SizedBox(height: 30,),
                       Container(
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             // ============ Select state dropdown ==============
-                            SizedBox(
-                              width: 175,
-                              child: DropdownButtonFormField<dynamic>(
-                                hint: Text(
-                                  "Select state"
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                // color: Colors.green,
+                                child: DropdownButtonFormField<dynamic>(
+                                  hint: Text(
+                                    "Select state"
+                                  ),
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)                       
+                                  ),
+                                  items: [], 
+                                  onChanged: (value){
+                                
+                                  }
                                 ),
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
-                                items: [], 
-                                onChanged: (value){
-      
-                                }
                               ),
                             ),  
-
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            
                             // ============ Select city dropdown ===============
-                            SizedBox(
-                              width: 175,
-                              child: DropdownButtonFormField<dynamic>(
-                                hint: Text(
-                                  "Select city"
-                                ),
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
-                                items: [], 
-                                onChanged: (value){
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                // color: Colors.amber,
+                                child: DropdownButtonFormField<dynamic>(
+                                  hint: Text(
+                                    "Select city"
+                                  ),
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)         
+                                  ),
+                                  items: [], 
+                                  onChanged: (value){
       
-                                }
+                                  }
+                                ),
                               ),
                             )
                           ],
                         ),
                       ),
-
 
                       const SizedBox(height: 30,),
                       Container(
@@ -258,86 +283,96 @@ class AuctionScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             // =========== No. of items ============
-                            SizedBox(
-                              width: 175,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "No. of items available",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14
-                                    ),
-                                  ),
-                                  const SizedBox(height: 10,),
-                                  Row(
-                                    children: [
-                                      InkWell(
-                                        child: Container(
-                                          height: 30,
-                                          width: 30,
-                                          color: Colors.black,
-                                          child: Icon(Iconsax.minus, color: Colors.white, size: 15,),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 10,),
-                                      Text(
-                                        "1"
-                                      ),
-                                      const SizedBox(width: 10,),
-                                      InkWell(
-                                        child: Container(
-                                          height: 30,
-                                          width: 30,
-                                          color: Color(0xffFF5C2A),
-                                          child: Icon(Iconsax.add, color: Colors.white, size: 15 ,),
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-
-                            // ============ Price text field ==============
-                            SizedBox(
-                              width: 175,
-                              child: Column(
-                                children: [
-                                  Row(
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                child: SizedBox(
+                                  // width: 175,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Price",
+                                        "No. of items available",
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 14
                                         ),
                                       ),
-                                      const SizedBox(width: 5,),
-                                      Text(
-                                        "(Naira)",
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color: Colors.grey
+                                      const SizedBox(height: 10,),
+                                      Row(
+                                        children: [
+                                          InkWell(
+                                            child: Container(
+                                              height: 30,
+                                              width: 30,
+                                              color: Colors.black,
+                                              child: Icon(Iconsax.minus, color: Colors.white, size: 15,),
+                                            ),
+                                          ),
+                                          const SizedBox(width: 10,),
+                                          Text(
+                                            "1"
+                                          ),
+                                          const SizedBox(width: 10,),
+                                          InkWell(
+                                            child: Container(
+                                              height: 30,
+                                              width: 30,
+                                              color: Color(0xffFF5C2A),
+                                              child: Icon(Iconsax.add, color: Colors.white, size: 15 ,),
+                                            ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            // ============ Price text field ==============
+                            Expanded(
+                              flex: 1,
+                              child: Container(
+                                child: SizedBox(
+                                  // width: 175,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Price",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14
+                                            ),
+                                          ),
+                                          const SizedBox(width: 5,),
+                                          Text(
+                                            "(Naira)",
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              color: Colors.grey
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 10,),
+                                      TextFormField(
+                                        decoration: InputDecoration(
+                                          border: OutlineInputBorder(),
+                                          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)
                                         ),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 10,),
-                                  TextFormField(
-                                    decoration: InputDecoration(
-                                      border: OutlineInputBorder(),
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
                             )
                           ],
                         ),
                       ),
-
-
+ 
                       const SizedBox(height: 30,),
 
                       // ============ Weight Text field ==============
@@ -356,7 +391,7 @@ class AuctionScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 5,),
                                 Text(
-                                  "(Kg )",
+                                  "(Kg)",
                                   style: TextStyle(
                                     fontSize: 10,
                                     color: Colors.grey
@@ -368,6 +403,7 @@ class AuctionScreen extends StatelessWidget {
                             TextFormField(
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
+                                contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0)
                               ),
                             ),
                           ],
@@ -377,48 +413,53 @@ class AuctionScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
 
-                  // ============ Back Button ============
-                  TextButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    style: TextButton.styleFrom(
-                      backgroundColor: Color(0xFFEEF4F8),
-                      padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0)
+                    // ============ Back Button ============
+                    TextButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      style: TextButton.styleFrom(
+                        backgroundColor: Color(0xFFEEF4F8),
+                        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)
+                        ),
+                      ),
+                      child: Image.asset(
+                        "assets/images/arrow_back.png",
+                        width: 25.0,
                       ),
                     ),
-                    child: Image.asset(
-                      "assets/images/arrow_back.png",
-                      width: 25.0,
-                    ),
-                  ),
 
-                  // ============ Proceed Button ============
-                  SizedBox(
-                    height: 25,
-                    width: 90,
-                    child: ElevatedButton(
-                      onPressed: (){
-                        Get.toNamed(successAuction);
-                      }, 
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xffFF5C2A)
+                    // ============ Proceed Button ============
+                    SizedBox(
+                      height: 35,
+                      width: 120,
+                      child: ElevatedButton(
+                        onPressed: (){
+                          Get.toNamed(successAuction);
+                        }, 
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xffFF5C2A)
+                        ),
+                        child: Text(
+                          "Proceed"
+                        )
                       ),
-                      child: Text(
-                        "Proceed"
-                      )
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
+                    )
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

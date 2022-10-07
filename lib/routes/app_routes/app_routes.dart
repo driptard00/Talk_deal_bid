@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:talk_deals/screens/profile/Edit%20profile/edit_profile_screen.dart';
+import 'package:talk_deals/screens/profile/Settings/settings_screen.dart';
+import 'package:talk_deals/screens/profile/Wallet/fund_wallet_screen.dart';
 
 
 import '../../screens/auction/auction_screen.dart';
@@ -8,6 +11,8 @@ import '../../screens/dashboard_screen.dart';
 import '../../screens/home/home_screen.dart';
 import '../../screens/home/winners_screen.dart';
 import '../../screens/others/question_screen.dart';
+import '../../screens/profile/Activities/activities_screen.dart';
+import '../../screens/profile/Wallet/wallet_screen.dart';
 import '../../screens/profile/profile_screen.dart';
 import 'app_route_names.dart';
 import '../../screens/bidding/bidding_screen.dart';
@@ -116,6 +121,53 @@ List<GetPage<dynamic>> getPages = [
     name: profileScreen,
     page: () => ProfileScreen(),
     transition: Transition.rightToLeft,
+    transitionDuration: const Duration(milliseconds: 700),
+    curve: Curves.easeIn,
+  ),
+  /*
+  * Edit Profile Screen.
+  */
+  GetPage(
+    name: editProfileScreen,
+    page: () => EditProfileScreen(),
+    transition: Transition.downToUp,
+    transitionDuration: const Duration(milliseconds: 700),
+    curve: Curves.easeIn,
+  ),
+  /*
+  * Wallet/Fund Wallet Screen.
+  */
+  GetPage(
+    name: walletScreen,
+    page: () => WalletScreen(),
+    transition: Transition.downToUp,
+    transitionDuration: const Duration(milliseconds: 700),
+    curve: Curves.easeIn,
+  ),
+  GetPage(
+    name: fundWalletScreen,
+    page: () => FundWalletScreen(),
+    transition: Transition.downToUp,
+    transitionDuration: const Duration(milliseconds: 700),
+    curve: Curves.easeIn,
+  ),
+  /*
+  * Activities Screen.
+  */
+  GetPage(
+    name: activitesScreen,
+    page: () => ActivitiesScreen(),
+    transition: Transition.downToUp,
+    transitionDuration: const Duration(milliseconds: 700),
+    curve: Curves.easeIn,
+  ),
+  /*
+  * Settings Screen.
+  */
+  GetPage(
+    name: settingsScreen,
+    page: () => SettingsScreen(),
+    transition: Transition.downToUp,
     transitionDuration: const Duration(milliseconds: 700),
     curve: Curves.easeIn,
   ),
